@@ -42,7 +42,12 @@ class RandomFrame extends JFrame
 	            public void actionPerformed(ActionEvent event)
 	            {
 	            	randomWalk a = new randomWalk();
-	            	textArea.append(a.randomWalk());
+	            	
+	            	try{
+	            		textArea.append(a.randomWalk());
+	    			} catch (Exception e) {
+	    				e.printStackTrace();
+	    			}
 	            }
 	         });
 

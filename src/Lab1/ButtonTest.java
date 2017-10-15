@@ -123,10 +123,6 @@ class ButtonAction implements ActionListener
 			outputR rw = new outputR();
 			rw.showR();
 			randomWalk r = new randomWalk();
-			try{
-				r.write();
-			} catch (Exception e) {
-			}
 			break;
 		default:
 			break;

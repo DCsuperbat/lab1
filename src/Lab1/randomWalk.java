@@ -11,24 +11,21 @@ public class randomWalk
 	List<DirectedEdge> path = new ArrayList<>();  
 	String vertex = "";
 
-	public String randomWalk()
+	public String randomWalk()throws Exception
 	{
 		int v = new Random().nextInt(main.aq.size());
 		r(v);
 		DirectedEdge e = path.get(path.size()-1);
 		vertex += e.getTarget();
-		System.out.println(vertex);
-		return vertex;
-	}
-	public void write()throws Exception
-	{
+		//System.out.println(vertex);
 		File f = new File("C:\\Users\\zipeng\\workspace\\Lab1\\src\\textnew.txt");
     	FileOutputStream fos=new FileOutputStream(f);
     	fos.write(vertex.getBytes());
     	fos.close();
     	System.out.println("文本写入成功");
+		return vertex;
 	}
-	
+
 	public void r(int v) 
 	{  
 		List<DirectedEdge> edges= new ArrayList<>(); 
