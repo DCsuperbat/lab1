@@ -10,10 +10,17 @@ public class Main
 	public static ArrayList<String> aq;
 	public static EdgeWeightDiGraph g;
 	public static ArrayList<String> bridge;
-	
-    public static void main(String[] args)throws Exception 
+	 public static void main(String[] args) throws Exception
+	 {
+	     Main m = new Main();
+	     m.testmain();
+
+	     ButtonTest BT = new ButtonTest();
+	     BT.GUI();
+	 }
+    public void testmain()throws Exception 
     {
-        File f=new File("C:\\Users\\zipeng\\workspace\\Lab1\\src\\text.txt");
+        File f=new File("C:\\Users\\zipeng\\mygit\\Lab1\\src\\text.txt");
         FileInputStream fis=new FileInputStream(f);
         byte[] b=new byte[(int)f.length()];			
         fis.read(b);
@@ -35,8 +42,6 @@ public class Main
 		g = new EdgeWeightDiGraph(s);
 		g.CreateGraph(al,aq);
 
-    	ButtonTest BT = new ButtonTest();
-    	BT.GUI();
     }
     
     public static void arr(byte[] b, int len, ArrayList<String> al)
@@ -76,37 +81,7 @@ public class Main
     	}
     }
     
-    public static String calcShortestPath(String word1, String word2)
-    {
-    	String s = "";
-    	if(aq.contains(word1) && aq.contains(word2))
-    	{
-    		DijkstraSP p = new DijkstraSP(g,word1);
-	    	String ad = "";
-			double sum = 0;
-			ArrayList<String> ad2 = new ArrayList<String>();
-			for(DirectedEdge e : p.pathTo(word2))
-			{
-				ad=ad + e.getSource()+"->";
-				ad2.add(e.getTarget());
-				sum+=e.weight();
-			}
-			ad += ad2.get(ad2.size()-1);
-			s = ad+"\t"+sum;
-    	}
-    	else if(!aq.contains(word1) && aq.contains(word2))
-    	{
-    		s = "No ¡°" + word1 + "¡± in the graph!";
-    	}
-    	else if(aq.contains(word1) && !aq.contains(word2))
-    	{
-    		s = "No ¡°" + word2 + "¡± in the graph!";
-    	}
-    	else
-    	{
-    		s = "No ¡°" + word1 + "¡± and ¡°" + word2 + "¡± in the graph!";
-    	}
-    	
-	 	return s;
-    } 
+
+    
+
 }

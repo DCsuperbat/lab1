@@ -7,13 +7,12 @@ public class EdgeWeightDiGraph
 	public static List<DirectedEdge>[] adj; // 邻接表矩阵  
     private int V; // 点的数目  
     private int E; // 边的数目
-	Main main = new Main();
 
     public DirectedEdge ContainEdge(DirectedEdge e)   //存在边
     {
     	String source = e.getSource();
     	String target = e.getTarget();
-    	int i = main.aq.indexOf(source);
+    	int i = Main.aq.indexOf(source);
     	List<DirectedEdge> edges=adj[i];
 		for(int j=0;j<edges.size();j++)
 		{
@@ -46,6 +45,7 @@ public class EdgeWeightDiGraph
         	}
     }
     
+    @SuppressWarnings("unchecked")
     public EdgeWeightDiGraph(int V) 
     {  
         this.V = V;  
@@ -58,7 +58,7 @@ public class EdgeWeightDiGraph
     }  
 	      
     public void addEdge(DirectedEdge e) {  
-    	int i = main.aq.indexOf(e.getSource());
+    	int i = Main.aq.indexOf(e.getSource());
         adj[i].add(e);  
         E++;  
     }  
@@ -87,8 +87,8 @@ public class EdgeWeightDiGraph
       
     public String showDirectedGraph() {  
         String s = V + " 个顶点, " + E + " 条边\n";  
-        for (int i = 0; i < main.aq.size(); i++) {  
-            s += main.aq.get(i) + ": ";  
+        for (int i = 0; i < Main.aq.size(); i++) {  
+            s += Main.aq.get(i) + ": ";  
             for (DirectedEdge e : adj(i))
             {  
                 s += e.getTarget() + " [" + e.weight() + "], ";  

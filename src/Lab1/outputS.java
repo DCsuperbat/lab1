@@ -2,7 +2,6 @@ package Lab1;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -22,6 +21,8 @@ public class outputS
          });
    }
 }
+
+@SuppressWarnings("serial")
 class PathComponentFrame extends JFrame
 {
    public static final int TEXTAREA_ROWS = 8;
@@ -56,9 +57,7 @@ class PathComponentFrame extends JFrame
          {
             public void actionPerformed(ActionEvent event)
             {
-            	Main main = new Main();
-            	EdgeWeightDiGraph g = main.g;
-            	textArea.append(main.calcShortestPath(Field1.getText(), Field2.getText()));
+            	textArea.append(SP.calcShortestPath(Field1.getText(), Field2.getText()));
             }
          });
 

@@ -23,6 +23,8 @@ public class ButtonTest
       
    }
 }
+
+@SuppressWarnings("serial")
 class ButtonFrame extends JFrame
 {
    private JPanel buttonPanel;
@@ -122,7 +124,6 @@ class ButtonAction implements ActionListener
 		case 6:
 			outputR rw = new outputR();
 			rw.showR();
-			randomWalk r = new randomWalk();
 			break;
 		default:
 			break;

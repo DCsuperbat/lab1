@@ -23,6 +23,7 @@ public class outputR
    }
 }
 
+@SuppressWarnings("serial")
 class RandomFrame extends JFrame
 {
 	public static final int TEXTAREA_ROWS = 20;
@@ -44,7 +45,7 @@ class RandomFrame extends JFrame
 	            	randomWalk a = new randomWalk();
 	            	
 	            	try{
-	            		textArea.append(a.randomWalk());
+	            		textArea.append(a.RandomWalk());
 	    			} catch (Exception e) {
 	    				e.printStackTrace();
 	    			}

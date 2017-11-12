@@ -7,18 +7,17 @@ import java.io.FileOutputStream;
 public class randomWalk  
 {  
 	List<DirectedEdge>[] adj; 
-	Main main = new Main();
 	List<DirectedEdge> path = new ArrayList<>();  
 	String vertex = "";
 
-	public String randomWalk()throws Exception
+	public String RandomWalk() throws Exception
 	{
-		int v = new Random().nextInt(main.aq.size());
+		int v = new Random().nextInt(Main.aq.size());
 		r(v);
 		DirectedEdge e = path.get(path.size()-1);
 		vertex += e.getTarget();
 		//System.out.println(vertex);
-		File f = new File("C:\\Users\\zipeng\\workspace\\Lab1\\src\\textnew.txt");
+		File f = new File("C:\\Users\\zipeng\\mygit\\Lab1\\src\\textnew.txt");
     	FileOutputStream fos=new FileOutputStream(f);
     	fos.write(vertex.getBytes());
     	fos.close();
@@ -29,13 +28,13 @@ public class randomWalk
 	public void r(int v) 
 	{  
 		List<DirectedEdge> edges= new ArrayList<>(); 
-		edges = main.g.adj[v];
+		edges = EdgeWeightDiGraph.adj[v];
 		if(!edges.isEmpty())
 		{
 			int n = new Random().nextInt(edges.size());
 			DirectedEdge e = edges.get(n);
-			vertex = vertex + main.aq.get(v) + " ";
-			int t = main.aq.indexOf(e.getTarget());
+			vertex = vertex + Main.aq.get(v) + " ";
+			int t = Main.aq.indexOf(e.getTarget());
 			
 			if(!path.contains(e))
 			{

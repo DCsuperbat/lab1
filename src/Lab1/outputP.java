@@ -19,6 +19,7 @@ public class outputP
 	}
 }
 
+@SuppressWarnings("serial")
 class ImageFrame extends JFrame
 {
 	public ImageFrame()
@@ -28,6 +29,7 @@ class ImageFrame extends JFrame
 	}
 }
 
+@SuppressWarnings("serial")
 class ImageComponent extends JComponent
 {
 	Toolkit kit = Toolkit.getDefaultToolkit();

@@ -5,7 +5,6 @@ import java.util.*;
 public class DijkstraSP 
 {  
 	DijkstraSP p;
-	Main main = new Main();
     class QueueItem {  
         int node;  
         double distance;  
@@ -33,7 +32,7 @@ public class DijkstraSP
     private DirectedEdge[] edgeTo; // Â·¾¶  
       
     public DijkstraSP(EdgeWeightDiGraph g,String vertex) {  
-    	int begin = main.aq.indexOf(vertex);
+    	int begin = Main.aq.indexOf(vertex);
         pq = new PriorityQueue<>(itemComparator);  
         disTo = new double[g.V()];  
         edgeTo = new DirectedEdge[g.V()];  
@@ -50,7 +49,7 @@ public class DijkstraSP
       
     private void relax(EdgeWeightDiGraph g, int v) {  
         for (DirectedEdge e : g.adj(v)) {  
-            int to = main.aq.indexOf(e.getTarget());  
+            int to = Main.aq.indexOf(e.getTarget());  
             if (disTo[to] > disTo[v] + e.weight()) {  
                 disTo[to] = disTo[v] + e.weight();  
                 edgeTo[to] = e;  
@@ -68,15 +67,15 @@ public class DijkstraSP
     }  
       
     public Iterable<DirectedEdge> pathTo(String vertex) {  
-    	if(main.aq.contains(vertex))
+    	if(Main.aq.contains(vertex))
     	{
-    		int v = main.aq.indexOf(vertex);
+    		int v = Main.aq.indexOf(vertex);
             if (!hasPath(v)) return null;  
             List<DirectedEdge> path = new ArrayList<>();  
-            for (DirectedEdge e = edgeTo[v]; e != null; e = edgeTo[main.aq.indexOf(e.getSource())]) {  
+            for (DirectedEdge e = edgeTo[v]; e != null; e = edgeTo[Main.aq.indexOf(e.getSource())]) {  
                 path.add(0, e);  
                 }
-            DirectedEdge e = path.get(path.size()-1);
+            //DirectedEdge e = path.get(path.size()-1);
             return path; 
     	}
     	return null; 

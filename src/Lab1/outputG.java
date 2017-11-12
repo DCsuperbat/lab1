@@ -22,6 +22,7 @@ public class outputG
    }
 }
 
+@SuppressWarnings("serial")
 class SizedFrame extends JFrame
 {
 	public static final int TEXTAREA_ROWS = 30;
@@ -40,8 +41,7 @@ class SizedFrame extends JFrame
 	         {
 	            public void actionPerformed(ActionEvent event)
 	            {
-	            	Main main = new Main();
-	            	EdgeWeightDiGraph g = main.g;
+	            	EdgeWeightDiGraph g = Main.g;
 	            	textArea.append(g.showDirectedGraph());
 	            }
 	         });

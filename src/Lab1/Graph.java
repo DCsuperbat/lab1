@@ -8,10 +8,10 @@ import java.io.FileOutputStream;
 public class Graph 
 {
 	EdgeWeightDiGraph g;
-	Main main = new Main();
+
 	public  void showG() 
 	{
-		g = main.g;					
+		g = Main.g;					
 		GraphViz gViz=new GraphViz("C:\\Users\\zipeng\\Desktop\\pic", "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe");
 	        gViz.start_graph();
 	        for (int i = 0; i < g.V(); i++) 

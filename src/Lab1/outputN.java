@@ -22,6 +22,7 @@ public class outputN
    }
 }
 
+@SuppressWarnings("serial")
 class NewtextComponentFrame extends JFrame
 {
    public static final int TEXTAREA_ROWS = 8;

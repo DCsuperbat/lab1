@@ -2,7 +2,6 @@ package Lab1;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -21,6 +20,8 @@ public class outputB
          });
    }
 }
+
+@SuppressWarnings("serial")
 class TextComponentFrame extends JFrame
 {
    public static final int TEXTAREA_ROWS = 8;
