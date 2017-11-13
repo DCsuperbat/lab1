@@ -39,6 +39,7 @@ public class BridgeWords
 	{
     	int pa=Main.aq.indexOf(word1);
     	int pb=Main.aq.indexOf(word2);
+        int abc;
     	String s = "";
     	ArrayList<String> bridge = BridgeWord(word1,word2);
 		if(pa!=-1 && pb!=-1)
